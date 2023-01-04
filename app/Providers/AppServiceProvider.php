@@ -15,8 +15,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         require_once app_path('Helpers/ConverterHelper.php');
-        require_once app_path('Helpers/SelectDataHelper.php');
-        require_once app_path('Helpers/MapingArrayKey.php');
     }
 
     /**

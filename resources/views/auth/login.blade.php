@@ -10,7 +10,7 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                         <div class="brand-logo pb-4 text-center">
-                            <h2>Profile - Matching</h2>
+                            <!-- <h2></h2> -->
                         </div>
                         <div class="card">
                             <div class="card-inner card-inner-lg">
@@ -30,7 +30,7 @@
                                         </div>
                                         <div class="form-control-wrap">
                                             <input id="username" type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus autocomplete="off">
-                                            
+
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -59,7 +59,9 @@
                                         <button type="submit" class="btn btn-lg btn-primary btn-block">Masuk</button>
                                     </div>
                                 </form>
-                                <div class="form-note-s2 text-center pt-4">Mahasiswa belum punya akun? <a href="{{ route('register') }}">Buat disini.</a>
+                                {{--
+                                    <div class="form-note-s2 text-center pt-4">Mahasiswa belum punya akun? <a href="{{ route('register') }}">Buat disini.</a>
+                                --}}
                                 </div>
                             </div>
                         </div>
@@ -69,7 +71,7 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <div class="nk-block-content text-center text-lg-left">
-                                        <p class="text-soft">&copy; 2022 Profile - Matching. Prima Yudha.</p>
+                                        <p class="text-soft">&copy; 2023 Optimasi Penjadwalan - Kadek Cahya</p>
                                     </div>
                                 </div>
                             </div>
@@ -83,5 +85,5 @@
         <!-- main @e -->
     </div>
     <!-- app-root @e -->
-    
+
     @include('layouts.main.end')

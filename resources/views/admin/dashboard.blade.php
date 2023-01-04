@@ -1,23 +1,37 @@
-<div class="card card-bordered card-preview">
-    <div class="card-inner">
-        <div class="text-center">
-            <h5>Selamat Datang di</h5>
-            <h4>Metode Profile Matching Pada Sistem Pendukung Keputusan Pemilihan Dosen Pembimbing Skripsi</h4>
-            <h5 class="ff-base fw-medium">
-                <small class="text-soft">Halo, <span style="text-transform: capitalize;">{{ Auth::user()->role->role }}</span></small>
-            </h5>
-        </div>
-        
-    </div>
-</div><!-- .card-preview -->
+@extends('layouts.master')
+@section('home', 'active')
 
-<div class="card card-bordered card-preview">
-    <div class="card-inner">
-        <div class="text-center">
-            <h5 class="ff-base fw-medium">
-                <small class="text-soft">Pilih menu Pencarian Dosen Pembimbing untuk memulai pencarian dosen</small>
-            </h5>
+@section('content')
+<div class="nk-block nk-block-lg">
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h4 class="nk-block-title">Dashboard</h4>
+            <h6 class="nk-block-title">Sistem Penjadwalan dengan Optimasi Algoritma Genetika</h6>
+            <!-- <p>The following table can be use for <strong class="text-primary">order history, invoice listing</strong> related transaction.</p> -->
         </div>
-        
     </div>
-</div><!-- .card-preview -->
+
+    <div class="card card-preview p-5">
+        <h5 class="nk-block-title">Skripsi</h5>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tanggal / Ruangan</th>
+                    <th>Nama</th>
+                    <th>Pembimbing</th>
+                    <th>Narasumber</th>
+                    <th>Judul</th>
+                    <th>*</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+
+    </div><!-- .card -->
+</div><!-- nk-block -->
+@endsection
+
+

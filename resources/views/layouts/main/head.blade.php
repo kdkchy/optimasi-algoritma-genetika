@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
     <!-- Page Title  -->
-    <title>@yield('title', 'Profile Matching') - Prima Yudha</title>
+    <title>@yield('title', 'Optimasi Penjadwalan') - Kadek Cahya</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=3.0.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=3.0.0') }}">

@@ -6,10 +6,10 @@
                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
             </div>
             <div class="nk-header-brand d-xl-none">
-                <a href="html/index.html" class="logo-link">
+                <!-- <a href="html/index.html" class="logo-link">
                     <img class="logo-light logo-img" src="{{ asset('assets/images/logo.png') }}" srcset="{{ asset('assets/images/logo2x.png 2x') }}" alt="logo">
                     <img class="logo-dark logo-img" src="{{ asset('assets/images/logo-dark.png') }}" srcset="{{ asset('assets/images/logo-dark2x.png 2x') }}" alt="logo-dark">
-                </a>
+                </a> -->
             </div><!-- .nk-header-brand -->
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
@@ -48,7 +48,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"> 
+                                            document.getElementById('logout-form').submit();">
                                             <em class="icon ni ni-signout"></em><span>Sign out</span>
                                         </a>
                                     </li>

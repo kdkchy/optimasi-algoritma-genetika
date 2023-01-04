@@ -2,15 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\DosenController;
-use App\Http\Controllers\Admin\BidangKeahlianController;
-use App\Http\Controllers\Admin\IdealMasterController;
-use App\Http\Controllers\Admin\GapMasterController;
-
-use App\Http\Controllers\Mahasiswa\PencarianController;
-use App\Http\Controllers\Mahasiswa\DosbingController;
-
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\Person\PersonController;
+use App\Http\Controllers\Jadwal\JadwalController;
+
+use App\Http\Controllers\Dosen\DosenController;
+use App\Http\Controllers\Mahasiswa\MahasiswaController;
+
+use App\Http\Controllers\Perancangan\PerancanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,51 +33,46 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->name('admin.')->group(function () {
 
+    Route::prefix('/jadwal')->namespace('Jadwal')->name('jadwal.')->group(function () {
+        Route::post('/store', [JadwalController::class, 'store'])->name('store');
+        Route::post('/store/{id}', [JadwalController::class, 'storeById'])->name('storeById');
+
+    });
+
+    Route::prefix('/mahasiswa')->namespace('Mahasiswa')->name('mahasiswa.')->group(function () {
+        Route::get('/', [MahasiswaController::class, 'index'])->name('index');
+        Route::get('/{person}/detail', [MahasiswaController::class, 'detail'])->name('detail');
+
+        Route::get('/create', [MahasiswaController::class, 'create'])->name('create');
+        Route::post('/store', [MahasiswaController::class, 'store'])->name('store');
+
+        Route::get('/edit/{person}', [MahasiswaController::class, 'edit'])->name('edit');
+        Route::post('/update/{person}', [MahasiswaController::class, 'update'])->name('update');
+        Route::delete('/delete/{person}', [MahasiswaController::class, 'delete'])->name('delete');
+    });
+
     Route::prefix('/dosen')->namespace('Dosen')->name('dosen.')->group(function () {
-        Route::get('/index', [DosenController::class, 'index'])->name('index');
+        Route::get('/', [DosenController::class, 'index'])->name('index');
+        Route::get('/{person}/detail', [DosenController::class, 'detail'])->name('detail');
+
+        Route::get('/create', [DosenController::class, 'create'])->name('create');
         Route::post('/store', [DosenController::class, 'store'])->name('store');
-        Route::post('/update', [DosenController::class, 'update'])->name('update');
-        Route::post('/destroy', [DosenController::class, 'destroy'])->name('destroy');
+
+        Route::get('/edit/{person}', [DosenController::class, 'edit'])->name('edit');
+        Route::post('/update/{person}', [DosenController::class, 'update'])->name('update');
+        Route::delete('/delete/{person}', [DosenController::class, 'delete'])->name('delete');
     });
 
-    Route::prefix('/bidang-keahlian')->namespace('BidangKeahlian')->name('bidang-keahlian.')->group(function () {
-        Route::get('/index', [BidangKeahlianController::class, 'index'])->name('index');
-        Route::post('/store', [BidangKeahlianController::class, 'store'])->name('store');
-        Route::post('/update', [BidangKeahlianController::class, 'update'])->name('update');
-        Route::post('/destroy', [BidangKeahlianController::class, 'destroy'])->name('destroy');
-    });
+    Route::prefix('/perancangan')->namespace('Perancangan')->name('perancangan.')->group(function() {
+        Route::get('/', [PerancanganController::class, 'index'])->name('index');
+        Route::post('/rancang', [PerancanganController::class, 'rancang'])->name('rancang');
 
-    Route::prefix('/ideal-master')->namespace('IdealMaster')->name('ideal-master.')->group(function () {
-        Route::get('/index', [IdealMasterController::class, 'index'])->name('index');
-        Route::post('/store', [IdealMasterController::class, 'store'])->name('store');
-        Route::post('/update', [IdealMasterController::class, 'update'])->name('update');
-        Route::post('/destroy', [IdealMasterController::class, 'destroy'])->name('destroy');
-    });
-
-    Route::prefix('/gap-master')->namespace('GapMaster')->name('gap-master.')->group(function () {
-        Route::get('/index', [GapMasterController::class, 'index'])->name('index');
-        Route::post('/store', [GapMasterController::class, 'store'])->name('store');
-        Route::post('/update', [GapMasterController::class, 'update'])->name('update');
-        Route::post('/destroy', [GapMasterController::class, 'destroy'])->name('destroy');
+        Route::get('/setup', [PerancanganController::class, 'setupJadwal'])->name('setup');
+        Route::post('/store', [PerancanganController::class, 'store'])->name('store');
     });
 
 });
 
-Route::middleware(['auth', 'role:1,2,3'])->prefix('/mahasiswa')->namespace('Mahasiswa')->name('mahasiswa.')->group(function () {
-
-    Route::prefix('/pencarian')->namespace('Pencarian')->name('pencarian.')->group(function () {
-        Route::get('/index', [PencarianController::class, 'index'])->name('index');
-        Route::post('/hasil-pencarian', [PencarianController::class, 'hasilpencarian'])->name('hasilpencarian');
-        Route::post('/store', [PencarianController::class, 'store'])->name('store');
-        Route::get('/history-pencarian', [PencarianController::class, 'historypencarian'])->name('historypencarian');
-        Route::post('/destroy', [PencarianController::class, 'destroy'])->name('destroy');
-    });
-
-    Route::prefix('/dosbin')->namespace('Dosbing')->name('dosbing.')->group(function () {
-        Route::get('/index', [DosbingController::class, 'index'])->name('index');
-    });
-
-});
 
 Route::middleware(['auth', 'role:1,2,3'])->group(function () {
 

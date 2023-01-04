@@ -1,32 +1,58 @@
-<?php 
+<?php
 
-    function konversi_gender($val){
-        return $val == 1 ? 'Laki - laki' : 'Perempuan';
-    }
+    function hari_jam($val){
+        switch($val){
+            //senin
+            case 11:
+                return 'Senin - 08:00';
+            case 12:
+                return 'Senin - 10:00';
+            case 13:
+                return 'Senin - 13:00';
+            case 14:
+                return 'Senin - 15:00';
 
-    function konversi_pendidikan_terakhir($val){
-        $res = 0;
-        switch ($val){
-            case "S1": $res = 1; break;
-            case "S2": $res = 1; break;
-            case "S3": $res = 2; break;
+            //selasa
+            case 21:
+                return 'Selasa - 08:00';
+            case 22:
+                return 'Selasa - 10:00';
+            case 23:
+                return 'Selasa - 13:00';
+            case 24:
+                return 'Selasa - 15:00';
+
+            //rabu
+            case 31:
+                return 'Rabu - 08:00';
+            case 32:
+                return 'Rabu - 10:00';
+            case 33:
+                return 'Rabu - 13:00';
+            case 34:
+                return 'Rabu - 15:00';
+
+            //kamis
+            case 41:
+                return 'Kamis - 08:00';
+            case 42:
+                return 'Kamis - 10:00';
+            case 43:
+                return 'Kamis - 13:00';
+            case 44:
+                return 'Kamis - 15:00';
+
+            //jumat
+            case 51:
+                return 'Jumat - 08:00';
+            case 52:
+                return 'Jumat - 10:00';
+            case 53:
+                return 'Jumat - 13:00';
+            case 54:
+                return 'Jumat - 15:00';
         }
-            
-        return $res;
+
     }
-
-    function konversi_mahasiswa_lulus($val) {
-        $res = 0;
-        if($val > 5) {
-            $res = 3;
-        } elseif($val > 3) {
-            $res = 2;
-        } else {
-            $res = 1;
-        }
-
-        return $res;
-    }
-
 
 ?>

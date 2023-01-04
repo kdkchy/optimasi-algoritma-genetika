@@ -1,22 +1,22 @@
 @extends('layouts.master')
-@section('dosen', 'active')
+@section('mahasiswa', 'active')
 
 @section('content')
     <div class="nk-block nk-block-lg">
         <div class="nk-block-head">
             <div class="nk-block-head-content">
-                <h4 class="nk-block-title">Daftar Dosen</h4>
+                <h4 class="nk-block-title">Daftar Mahasiswa</h4>
                 <!-- <p>The following table can be use for <strong class="text-primary">order history, invoice listing</strong> related transaction.</p> -->
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 mb-5">
-                <form method="GET" action="{{ route('admin.dosen.index') }}">
+                <form method="GET" action="{{ route('admin.mahasiswa.index') }}">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
                                 <div class="form-control-wrap">
-                                    <input type="text" class="form-control" name="search" value="{{ request()->search }}" placeholder="Cari Dosen">
+                                    <input type="text" class="form-control" name="search" value="{{ request()->search }}" placeholder="Cari Mahasiswa">
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                 </form>
             </div>
             <div class="col-md-4 mb-5 text-end">
-                <a href="{{ route('admin.dosen.create') }}" class="btn btn-primary" ><em class="icon ni ni-plus"></em><span>Tambah Dosen</span> </a>
+                <a href="{{ route('admin.mahasiswa.create') }}" class="btn btn-primary" ><em class="icon ni ni-plus"></em><span>Tambah Mahasiswa</span> </a>
             </div>
         </div>
 
@@ -60,8 +60,8 @@
                                 <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown" data-offset="-8,0"><em class="icon ni ni-more-h"></em></a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
                                     <ul class="link-list-plain">
-                                        <li><a href="{{ route('admin.dosen.detail', ['person' => $item->id]) }}" class="text-primary">View</a></li>
-                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#deleteDosen_{{ $item->id }}" class="text-danger">Hapus</a></li>
+                                        <li><a href="{{ route('admin.mahasiswa.detail', ['person' => $item->id]) }}" class="text-primary">View</a></li>
+                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#deleteMahasiswa_{{ $item->id }}" class="text-danger">Hapus</a></li>
                                     </ul>
                                 </div>
                             </div>
