@@ -36,7 +36,7 @@ class DosenController extends Controller
         if(count($cek_jadwal) == 0){
             $jadwal = null;
         } else {
-            $jadwal_raw = PersonJadwal::select('status', 'hari_jam', 'desk_kegiatan', 'status_kepesertaan_id', 'status_ujian_id')
+            $jadwal_raw = PersonJadwal::select('id', 'status', 'hari_jam', 'desk_kegiatan', 'status_kepesertaan_id', 'status_ujian_id', 'dinas')
                 ->with('statusKepesertaan')
                 ->where('person_id', $person->id)->get();
 
@@ -93,7 +93,15 @@ class DosenController extends Controller
 
     }
 
-    public function delete(Person $person){
+    public function destroy(Person $person){
 
+        try{
+            $delete = $person->delete();
+            session()->flash('success','Penghapusan Berhasil');
+        } catch (\Exception $e) {
+            session()->flash('danger','Penghapusan Gagal');
+        }
+
+        return redirect()->route('admin.dosen.index');
     }
 }

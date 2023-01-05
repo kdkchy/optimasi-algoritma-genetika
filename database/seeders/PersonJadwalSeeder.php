@@ -25,11 +25,10 @@ class PersonJadwalSeeder extends Seeder
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 1,
             'jam' => 2,
             'hari_jam' => 12,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -68,20 +67,18 @@ class PersonJadwalSeeder extends Seeder
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 2,
             'jam' => 3,
             'hari_jam' => 23,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 2,
             'jam' => 4,
             'hari_jam' => 24,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
 
@@ -96,11 +93,10 @@ class PersonJadwalSeeder extends Seeder
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 3,
             'jam' => 2,
             'hari_jam' => 32,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -113,22 +109,20 @@ class PersonJadwalSeeder extends Seeder
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 3,
             'jam' => 4,
             'hari_jam' => 34,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
 
         //kamis
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 4,
             'jam' => 1,
             'hari_jam' => 41,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -141,11 +135,10 @@ class PersonJadwalSeeder extends Seeder
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 4,
             'jam' => 3,
             'hari_jam' => 43,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -160,11 +153,10 @@ class PersonJadwalSeeder extends Seeder
         //jumat
         DB::table('person_jadwal')->insert([
             'person_id' => 1,
-            'status' => 1,
+            'status' => 0,
             'hari' => 5,
             'jam' => 1,
             'hari_jam' => 51,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -216,7 +208,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 1,
             'jam' => 3,
             'hari_jam' => 13,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Matematika Komputasi',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -225,7 +217,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 1,
             'jam' => 4,
             'hari_jam' => 14,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Basis Data',
             'dinas' => 0,
         ]);
 
@@ -236,7 +228,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 1,
             'hari_jam' => 21,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Kecerdasan Buatan',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -253,7 +245,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 3,
             'hari_jam' => 23,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Digipreneur',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -272,7 +264,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 1,
             'hari_jam' => 31,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Framework Web',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -297,7 +289,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 4,
             'hari_jam' => 34,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Praktikum Kecerdasan Buatan',
             'dinas' => 0,
         ]);
 
@@ -308,7 +300,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 4,
             'jam' => 1,
             'hari_jam' => 41,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Workshop Big Data',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -385,7 +377,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 1,
             'jam' => 2,
             'hari_jam' => 12,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Struktur Data',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -394,7 +386,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 1,
             'jam' => 3,
             'hari_jam' => 13,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Struktur Data',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -413,16 +405,15 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 1,
             'hari_jam' => 21,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Kecerdasan Buatan',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 3,
-            'status' => 1,
+            'status' => 0,
             'hari' => 2,
             'jam' => 2,
             'hari_jam' => 22,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -499,7 +490,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 4,
             'jam' => 3,
             'hari_jam' => 43,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Kecerdasan Buatan',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -526,16 +517,15 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 5,
             'jam' => 2,
             'hari_jam' => 52,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Struktur Data',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 3,
-            'status' => 1,
+            'status' => 0,
             'hari' => 5,
             'jam' => 3,
             'hari_jam' => 53,
-            'desk_kegiatan' => 'Kuliah',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -562,7 +552,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 1,
             'jam' => 2,
             'hari_jam' => 12,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Metode Numerik',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -613,7 +603,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 4,
             'hari_jam' => 24,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Matematika Komputasi',
             'dinas' => 0,
         ]);
 
@@ -624,24 +614,24 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 1,
             'hari_jam' => 31,
-            'desk_kegiatan' => 'Kuliah',
-            'dinas' => 0,
-        ]);
-        DB::table('person_jadwal')->insert([
-            'person_id' => 4,
-            'status' => 1,
-            'hari' => 3,
-            'jam' => 2,
-            'hari_jam' => 32,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Metode Numerik',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
             'person_id' => 4,
             'status' => 0,
             'hari' => 3,
+            'jam' => 2,
+            'hari_jam' => 32,
+            'dinas' => 0,
+        ]);
+        DB::table('person_jadwal')->insert([
+            'person_id' => 4,
+            'status' => 1,
+            'hari' => 3,
             'jam' => 3,
             'hari_jam' => 33,
+            'desk_kegiatan' => 'Metode Numerik',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -660,7 +650,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 4,
             'jam' => 1,
             'hari_jam' => 41,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Matematika Diskrit',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -703,7 +693,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 5,
             'jam' => 2,
             'hari_jam' => 52,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Matematika Komputasi',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -764,7 +754,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 1,
             'hari_jam' => 21,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Manajemen Proyek Prangkat Lunak',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -789,7 +779,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 2,
             'jam' => 4,
             'hari_jam' => 24,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Manajemen Proyek Prangkat Lunak',
             'dinas' => 0,
         ]);
 
@@ -800,7 +790,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 1,
             'hari_jam' => 31,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Data Mining',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -817,7 +807,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 3,
             'hari_jam' => 33,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Data Mining',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -826,7 +816,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 3,
             'jam' => 4,
             'hari_jam' => 34,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Manajemen Proyek Prangkat Lunak',
             'dinas' => 0,
         ]);
 
@@ -861,7 +851,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 4,
             'jam' => 4,
             'hari_jam' => 44,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Manajemen Proyek Prangkat Lunak',
             'dinas' => 0,
         ]);
 
@@ -888,7 +878,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 5,
             'jam' => 3,
             'hari_jam' => 53,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Data Mining',
             'dinas' => 0,
         ]);
         DB::table('person_jadwal')->insert([
@@ -897,7 +887,7 @@ class PersonJadwalSeeder extends Seeder
             'hari' => 5,
             'jam' => 4,
             'hari_jam' => 54,
-            'desk_kegiatan' => 'Kuliah',
+            'desk_kegiatan' => 'Data Mining',
             'dinas' => 0,
         ]);
     }

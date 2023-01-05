@@ -28,17 +28,17 @@ class PersonSeeder extends Seeder
         DB::table('persons')->insert([
             'status_person_id' => 1,
             'uniq_id' => 100001,
-            'name' => 'Dosbing',
+            'name' => 'Aidan Cooper',
         ]);
         DB::table('persons')->insert([
             'status_person_id' => 1,
             'uniq_id' => 100002,
-            'name' => 'Narsum Satu',
+            'name' => 'Xena Norman',
         ]);
         DB::table('persons')->insert([
             'status_person_id' => 1,
             'uniq_id' => 100003,
-            'name' => 'Narsum Dua',
+            'name' => 'Samuel Newman',
         ]);
     }
 }

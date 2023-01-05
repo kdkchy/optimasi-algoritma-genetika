@@ -6,6 +6,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\Person\PersonController;
 use App\Http\Controllers\Jadwal\JadwalController;
 
+use App\Http\Controllers\Ruangan\RuanganController;
 use App\Http\Controllers\Dosen\DosenController;
 use App\Http\Controllers\Mahasiswa\MahasiswaController;
 
@@ -22,21 +23,25 @@ use App\Http\Controllers\Perancangan\PerancanganController;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return redirect()->route('login');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+    // return redirect()->route('login');
+// })->name('welcome');
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->name('admin.')->group(function () {
 
     Route::prefix('/jadwal')->namespace('Jadwal')->name('jadwal.')->group(function () {
         Route::post('/store', [JadwalController::class, 'store'])->name('store');
-        Route::post('/store/{id}', [JadwalController::class, 'storeById'])->name('storeById');
+        Route::post('/update', [JadwalController::class, 'update'])->name('update');
+    });
 
+    Route::prefix('/ruangan')->namespace('Ruangan')->name('ruangan.')->group(function () {
+        Route::get('/', [RuanganController::class, 'index'])->name('index');
     });
 
     Route::prefix('/mahasiswa')->namespace('Mahasiswa')->name('mahasiswa.')->group(function () {
@@ -48,7 +53,7 @@ Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->n
 
         Route::get('/edit/{person}', [MahasiswaController::class, 'edit'])->name('edit');
         Route::post('/update/{person}', [MahasiswaController::class, 'update'])->name('update');
-        Route::delete('/delete/{person}', [MahasiswaController::class, 'delete'])->name('delete');
+        Route::delete('/destroy/{person}', [MahasiswaController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('/dosen')->namespace('Dosen')->name('dosen.')->group(function () {
@@ -60,7 +65,7 @@ Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->n
 
         Route::get('/edit/{person}', [DosenController::class, 'edit'])->name('edit');
         Route::post('/update/{person}', [DosenController::class, 'update'])->name('update');
-        Route::delete('/delete/{person}', [DosenController::class, 'delete'])->name('delete');
+        Route::delete('/destroy/{person}', [DosenController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('/perancangan')->namespace('Perancangan')->name('perancangan.')->group(function() {
@@ -69,6 +74,10 @@ Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->n
 
         Route::get('/setup', [PerancanganController::class, 'setupJadwal'])->name('setup');
         Route::post('/store', [PerancanganController::class, 'store'])->name('store');
+
+        Route::delete('/destroy/{id}', [PerancanganController::class, 'destroy'])->name('destroy');
+        Route::post('/terlaksana/{id}', [PerancanganController::class, 'terlaksana'])->name('terlaksana');
+        Route::post('/jadwal-ulang/{id}', [PerancanganController::class, 'jadwalUlang'])->name('jadwalUlang');
     });
 
 });
@@ -81,6 +90,22 @@ Route::middleware(['auth', 'role:1,2,3'])->group(function () {
         Route::post('/store', [AkunController::class, 'store'])->name('store');
         Route::post('/update', [AkunController::class, 'update'])->name('update');
         Route::post('/destroy', [AkunController::class, 'destroy'])->name('destroy');
+    });
+
+});
+
+Route::middleware(['auth', 'role:1,2,3'])->group(function () {
+
+    Route::prefix('/bantuan')->namespace('Bantuan')->name('bantuan.')->group(function () {
+        Route::view('/index', 'bantuan.index')->name('index');
+    });
+
+});
+
+Route::middleware(['auth', 'role:1,2,3'])->group(function () {
+
+    Route::prefix('/tentang')->namespace('Bantuan')->name('tentang.')->group(function () {
+        Route::view('/index', 'tentang.index')->name('index');
     });
 
 });

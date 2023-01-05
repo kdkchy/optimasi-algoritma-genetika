@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Awobaz\Compoships\Compoships;
 
 class PersonJadwal extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use Compoships;
 
     protected $table = 'person_jadwal';
     protected $primaryKey = 'id';
@@ -24,6 +26,7 @@ class PersonJadwal extends Model
         'desk_kegiatan',
         'status_kepesertaan_id',
         'status_ujian_id',
+        'dinas'
     ];
 
     public function statusKepesertaan()
@@ -312,7 +315,7 @@ class PersonJadwal extends Model
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            session()->flash('danger','Penambahan Gagal');
+            session()->flash('danger','Penghapusan Gagal');
         }
     }
 

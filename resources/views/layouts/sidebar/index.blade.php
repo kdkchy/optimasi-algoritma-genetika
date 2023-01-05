@@ -2,8 +2,8 @@
 <div class="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
-            <a href="{{ route('home') }}" class="logo-link nk-sidebar-logo">
-                <h5 class="logo-small logo-img-small">OP</h5>
+            <a href="{{ route('welcome') }}" class="logo-link nk-sidebar-logo">
+                <h5 class="logo-small logo-img-small">SP</h5>
             </a>
         </div>
         <div class="nk-menu-trigger me-n2">
@@ -46,15 +46,13 @@
                             <span class="nk-menu-text">Dosen</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-
-                    {{--
-                    <li class="nk-menu-item @yield('akun')">
-                        <a href="{{ route('akun.index') }}" class="nk-menu-link">
+                    <li class="nk-menu-item @yield('ruangan')">
+                        <a href="{{ route('admin.ruangan.index') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
                             <span class="nk-menu-text">Ruangan</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-                    --}}
+
                     <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Pengaturan</h6>
                     </li><!-- .nk-menu-heading -->
@@ -70,14 +68,14 @@
                     <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Tentang</h6>
                     </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item @yield('akun')">
-                        <a href="{{ route('akun.index') }}" class="nk-menu-link">
+                    <li class="nk-menu-item @yield('tentang')">
+                        <a href="{{ route('tentang.index') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
                             <span class="nk-menu-text">Tentang</span>
                         </a>
                     </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item @yield('akun')">
-                        <a href="{{ route('akun.index') }}" class="nk-menu-link">
+                    <li class="nk-menu-item @yield('bantuan')">
+                        <a href="{{ route('bantuan.index') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
                             <span class="nk-menu-text">Bantuan</span>
                         </a>

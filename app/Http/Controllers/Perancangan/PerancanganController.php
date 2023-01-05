@@ -167,6 +167,55 @@ class PerancanganController extends Controller
         return redirect()->route('home');
     }
 
+    public static function destroy($id){
+        $terjadwalkan = Terjadwalkan::where('id', $id);
+
+        $find_id_kepesertaan = $terjadwalkan->first();
+        $jadwal_semula = PersonJadwal::removeTerjadwalkan($find_id_kepesertaan);
+
+        try{
+            $delete = $terjadwalkan->delete();
+            session()->flash('success','Penghapusan Berhasil');
+        } catch (\Exception $e) {
+            session()->flash('danger','Penghapusan Gagal');
+        }
+
+        return redirect()->route('home');
+    }
+
+    public static function terlaksana($id){
+        $terjadwalkan = Terjadwalkan::where('id', $id);
+
+        $find_id_kepesertaan = $terjadwalkan->first();
+        $jadwal_semula = PersonJadwal::removeTerjadwalkan($find_id_kepesertaan);
+
+        try{
+            $terlaksana = $terjadwalkan->update(['terlaksana' => 1]);
+            // hapus status jadwal di PErsonJadwl
+            session()->flash('success','Pelaksanaan Berhasil');
+        } catch (\Exception $e) {
+            session()->flash('danger','Pelaksanaan Gagal');
+        }
+
+        return redirect()->route('home');
+    }
+
+    public static function jadwalUlang($id){
+        $terjadwalkan = Terjadwalkan::where('id', $id);
+
+        $find_id_kepesertaan = $terjadwalkan->first();
+        $jadwal_semula = PersonJadwal::removeTerjadwalkan($find_id_kepesertaan);
+
+        try{
+            $terlaksana = $terjadwalkan->update(['terlaksana' => 0]);
+            // session()->flash('success','Pilih Jadwal Berhasil');
+        } catch (\Exception $e) {
+            // session()->flash('danger','Pilih Jadwal Gagal');
+        }
+
+        return redirect()->route('admin.perancangan.setup', ['generated_id' => $find_id_kepesertaan->generated_id]);
+    }
+
     public static function generateUniqueCode(){
         $generated_id = Str::random(25);
 

@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Awobaz\Compoships\Compoships;
 
 class JadwalPengganti extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use Compoships;
 
     protected $table = 'jadwal_pengganti';
     protected $primaryKey = 'id';
@@ -33,22 +35,22 @@ class JadwalPengganti extends Model
 
     public function jadwalPeserta()
     {
-        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'id'], ['hari_jam', 'person_id']);
+        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'person_id'], ['hari_jam', 'peserta_id']);
     }
 
     public function jadwalPembimbing()
     {
-        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'id'], ['hari_jam', 'person_id']);
+        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'person_id'], ['hari_jam', 'pembimbing_id']);
     }
 
     public function jadwalNarsum()
     {
-        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'id'], ['hari_jam', 'person_id']);
+        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'person_id'], ['hari_jam', 'narsum_id']);
     }
 
     public function jadwalNarsumNd()
     {
-        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'id'], ['hari_jam', 'person_id']);
+        return $this->hasOne(PersonJadwal::class, ['hari_jam', 'person_id'], ['hari_jam', 'narsum_nd_id']);
     }
 
     public function peserta(){

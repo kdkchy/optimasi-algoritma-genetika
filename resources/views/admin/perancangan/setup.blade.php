@@ -12,7 +12,7 @@
 
     @if($errors->any())
     <div class="card p-2">
-        <ul class="list">
+        <ul class="list list-sm list-cross">
             {!! implode('', $errors->all('<li class="text-danger">:message</li>')) !!}
         </ul>
     </div>
@@ -44,7 +44,6 @@
                 <a href="#" class="accordion-head collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item-{{ $loop->iteration }}">
                     <!-- <h6 class="title">What are some of the benefits of receiving my bill electronically?</h6> -->
                     <h5 class="title text-center">{{ hari_jam($item->hari_jam) }}</h5>
-                    {{ $item->jadwalPeserta }}
                     <div class="row">
                         <div class="text-center col-3">
                             {!! $item->jadwalPeserta->status == 0 ? '' : '<span class="badge bg-outline-warning">'.$item->jadwalPeserta->desk_kegiatan.'</span>' !!}
@@ -147,13 +146,12 @@
 
 
 @section('script')
-    <script>
-        $('#tanggal input').datepicker({
+    <!-- <script>
+        $('#tanggal').datepicker({
             todayBtn: true,
             clearBtn: true,
-            daysOfWeekDisabled: "0,1,2,3,4,6",
             daysOfWeekHighlighted: "5",
             autoclose: true
         });
-    </script>
+    </script> -->
 @endsection

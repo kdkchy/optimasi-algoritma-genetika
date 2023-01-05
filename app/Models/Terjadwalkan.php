@@ -28,4 +28,39 @@ class Terjadwalkan extends Model
         'generated_id'
     ];
 
+    protected $with = [
+        'ruangan',
+        'peserta',
+        'pembimbing',
+        'narsum',
+        'narsumNd',
+    ];
+
+
+    public function ruangan()
+    {
+        return $this->hasOne(Ruangan::class, 'id', 'ruangan_id');
+    }
+
+    public function peserta()
+    {
+        return $this->hasOne(Person::class, 'id', 'peserta_id');
+    }
+
+    public function pembimbing()
+    {
+        return $this->hasOne(Person::class, 'id', 'pembimbing_id');
+    }
+
+    public function narsum()
+    {
+        return $this->hasOne(Person::class, 'id', 'narsum_id');
+    }
+
+    public function narsumNd()
+    {
+        return $this->hasOne(Person::class, 'id', 'narsum_nd_id');
+    }
+
+
 }

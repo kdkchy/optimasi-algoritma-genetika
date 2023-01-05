@@ -10,7 +10,7 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                         <div class="brand-logo pb-4 text-center">
-                            <!-- <h2></h2> -->
+                            <h2>SP</h2>
                         </div>
                         <div class="card">
                             <div class="card-inner card-inner-lg">
@@ -71,7 +71,7 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <div class="nk-block-content text-center text-lg-left">
-                                        <p class="text-soft">&copy; 2023 Optimasi Penjadwalan - Kadek Cahya</p>
+                                        <p class="text-soft">&copy; 2023 - Kadek Cahya</p>
                                     </div>
                                 </div>
                             </div>

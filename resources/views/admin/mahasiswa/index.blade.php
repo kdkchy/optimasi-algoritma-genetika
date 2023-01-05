@@ -87,12 +87,13 @@
         ])
         @endcomponent
     @endforeach
+    --}}
 
-    @foreach($list_mahasiswa as $item)
-        @component('admin.layouts.modal.delete-dosen', [
+    @foreach($persons as $item)
+        @component('admin.components.modal.person.deleteMahasiswa', [
             'item' => $item,
         ])
         @endcomponent
-    @endforeach --}}
+    @endforeach
 
 @endsection
