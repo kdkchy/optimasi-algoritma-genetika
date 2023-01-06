@@ -1,7 +1,10 @@
 @include('layouts.main.head')
     <nav class="navbar shadow-sm p-3 mb-5 bg-body-tertiary">
         <div class="container">
-            <h3>SP</h3>
+            <div class="">
+                <h3 class="mb-1">Si-Paris</h3>
+                <h5 class="ff-base fw-medium text-soft">Sistem Penjadwalan Pra dan Skripsi dengan Algoritma Genetika</h5>
+            </div>
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 px-6 py-4 sm:block">
                     @auth

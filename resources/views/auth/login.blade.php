@@ -10,7 +10,7 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                         <div class="brand-logo pb-4 text-center">
-                            <h2>SP</h2>
+                            <h2>Si-Paris</h2>
                         </div>
                         <div class="card">
                             <div class="card-inner card-inner-lg">

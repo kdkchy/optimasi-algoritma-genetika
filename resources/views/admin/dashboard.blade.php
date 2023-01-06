@@ -5,8 +5,8 @@
 <div class="nk-block nk-block-lg">
     <div class="nk-block-head">
         <div class="nk-block-head-content text-center">
-            <h4 class="nk-block-title">Selamat Datang</h4>
-            <h6 class="nk-block-title">Sistem Penjadwalan Ujian Pra & Skripsi dengan Algoritma Genetika</h6>
+            <h4 class="nk-block-title">Si-Paris</h4>
+            <h6 class="ff-base fw-medium text-soft">Sistem Penjadwalan Pra dan Skripsi dengan Algoritma Genetika</h6>
             <!-- <p>The following table can be use for <strong class="text-primary">order history, invoice listing</strong> related transaction.</p> -->
         </div>
     </div>

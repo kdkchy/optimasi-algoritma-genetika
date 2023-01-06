@@ -3,7 +3,8 @@
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
             <a href="{{ route('welcome') }}" class="logo-link nk-sidebar-logo">
-                <h5 class="logo-small logo-img-small">SP</h5>
+                <!-- <h5>Si-Paris</h5> -->
+                <h5 class="nk-menu-text">Si-Paris</h5>
             </a>
         </div>
         <div class="nk-menu-trigger me-n2">
