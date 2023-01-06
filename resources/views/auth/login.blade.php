@@ -59,10 +59,6 @@
                                         <button type="submit" class="btn btn-lg btn-primary btn-block">Masuk</button>
                                     </div>
                                 </form>
-                                {{--
-                                    <div class="form-note-s2 text-center pt-4">Mahasiswa belum punya akun? <a href="{{ route('register') }}">Buat disini.</a>
-                                --}}
-                                </div>
                             </div>
                         </div>
                     </div>

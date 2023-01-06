@@ -82,4 +82,5 @@
         </div><!-- .card -->
     </div>
 
+
 @include('layouts.main.end')

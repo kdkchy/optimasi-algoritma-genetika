@@ -16,7 +16,7 @@
 
     <div class="card card-preview">
         <div class="card-header">
-            <h5>Input data Dosen beserta jadwal kuliah</h5>
+            <h5>Input data Dosen</h5>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('admin.dosen.store') }}">
