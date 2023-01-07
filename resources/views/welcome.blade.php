@@ -1,4 +1,5 @@
 @include('layouts.main.head')
+<div class="">
     <nav class="navbar shadow-sm p-3 mb-5 bg-body-tertiary">
         <div class="container">
             <div class="">
@@ -16,71 +17,85 @@
             @endif
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="card card-preview p-5 shadow">
-            <h5 class="nk-block-title">Skripsi</h5>
-            <table class="table table-hover">
-            <thead>
-                    <tr>
-                        <th>#</th>
-                        <th width="200px">Waktu / Tanggal / Ruangan</th>
-                        <th>Nama</th>
-                        <th>Pembimbing</th>
-                        <th>Narasumber I</th>
-                        <th>Narasumber II</th>
-                        <th>Judul</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($skripsi as $item)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ hari_jam($item->hari_jam) }} <br> {{  date('j \\ F Y', strtotime($item->tanggal)) }} <br> <span class="badge bg-primary rounded-pill">{{ $item->ruangan->label }}</span></td>
-                        <td>{{ $item->peserta->name }} <br> ({{ $item->peserta->uniq_id }})</td>
-                        <td>{{ $item->pembimbing->name }}</td>
-                        <td>{{ $item->narsum->name }}</td>
-                        <td>{{ $item->narsumNd->name }}</td>
-                        <td>{{ $item->judul }}</td>
-                    </tr>
-                    @empty
-                        <td class="text-center" colspan="8">Tidak ada jadwal</td>
-                    @endforelse
-                </tbody>
-            </table>
-        </div><!-- .card -->
-
-        <div class="card card-preview p-5 shadow">
-            <h5 class="nk-block-title">Pra Skripsi</h5>
-            <table class="table table-hover">
+    <div class="flex-shrink-0">
+        <div class="container mt-5 ">
+            <div class="card card-preview p-5 shadow">
+                <h5 class="nk-block-title">Skripsi</h5>
+                <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th>#</th>
-                        <th width="200px">Waktu / Tanggal / Ruangan</th>
-                        <th>Nama</th>
-                        <th>Pembimbing</th>
-                        <th>Narasumber I</th>
-                        <th>Narasumber II</th>
-                        <th>Judul</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($pra_skripsi as $item)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ hari_jam($item->hari_jam) }} <br> {{  date('j \\ F Y', strtotime($item->tanggal)) }} <br> <span class="badge bg-primary rounded-pill">{{ $item->ruangan->label }}</span></td>
-                        <td>{{ $item->peserta->name }} <br> ({{ $item->peserta->uniq_id }})</td>
-                        <td>{{ $item->pembimbing->name }}</td>
-                        <td>{{ $item->narsum->name }}</td>
-                        <td>{{ $item->narsumNd->name }}</td>
-                        <td>{{ $item->judul }}</td>
-                    </tr>
-                    @empty
-                        <td class="text-center" colspan="8">Tidak ada jadwal</td>
-                    @endforelse
-                </tbody>
-            </table>
-        </div><!-- .card -->
+                        <tr>
+                            <th>#</th>
+                            <th width="200px">Waktu / Tanggal / Ruangan</th>
+                            <th>Nama</th>
+                            <th>Pembimbing</th>
+                            <th>Narasumber I</th>
+                            <th>Narasumber II</th>
+                            <th>Judul</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($skripsi as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ hari_jam($item->hari_jam) }} <br> {{  date('j \\ F Y', strtotime($item->tanggal)) }} <br> <span class="badge bg-primary rounded-pill">{{ $item->ruangan->label }}</span></td>
+                            <td>{{ $item->peserta->name }} <br> ({{ $item->peserta->uniq_id }})</td>
+                            <td>{{ $item->pembimbing->name }}</td>
+                            <td>{{ $item->narsum->name }}</td>
+                            <td>{{ $item->narsumNd->name }}</td>
+                            <td>{{ $item->judul }}</td>
+                        </tr>
+                        @empty
+                            <td class="text-center" colspan="8">Tidak ada jadwal</td>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div><!-- .card -->
+
+            <div class="card card-preview p-5 shadow">
+                <h5 class="nk-block-title">Pra Skripsi</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th width="200px">Waktu / Tanggal / Ruangan</th>
+                            <th>Nama</th>
+                            <th>Pembimbing</th>
+                            <th>Narasumber I</th>
+                            <th>Narasumber II</th>
+                            <th>Judul</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($pra_skripsi as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ hari_jam($item->hari_jam) }} <br> {{  date('j \\ F Y', strtotime($item->tanggal)) }} <br> <span class="badge bg-primary rounded-pill">{{ $item->ruangan->label }}</span></td>
+                            <td>{{ $item->peserta->name }} <br> ({{ $item->peserta->uniq_id }})</td>
+                            <td>{{ $item->pembimbing->name }}</td>
+                            <td>{{ $item->narsum->name }}</td>
+                            <td>{{ $item->narsumNd->name }}</td>
+                            <td>{{ $item->judul }}</td>
+                        </tr>
+                        @empty
+                            <td class="text-center" colspan="8">Tidak ada jadwal</td>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div><!-- .card -->
+        </div>
     </div>
 
+    <nav class="navbar fixed-bottom navbar-expand-lg nk-auth-footer-full shadow">
+        <div class="footer mt-auto container py-2">
+            <div class="">
+                <span class="text-muted">Kadek Cahya</span>
+            </div>
+            <div class="">
+                <a target="_blank" href="{{ route('about') }}">About Me</a>
+            </div>
+        </div>
+    </nav>
+
+</div>
 
 @include('layouts.main.end')

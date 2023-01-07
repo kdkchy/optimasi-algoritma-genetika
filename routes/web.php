@@ -31,6 +31,7 @@ use App\Http\Controllers\Perancangan\PerancanganController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+Route::view('/about', 'tentang.public')->name('about');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'role:1,2'])->prefix('/admin')->namespace('Admin')->name('admin.')->group(function () {
